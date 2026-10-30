@@ -1,59 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="color-scheme" content="dark" />
-    <title>活動限界タイマー</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main class="app">
-      <header class="topbar">
-        <p class="eyebrow">BATTERY STATUS</p>
-        <h1>活動限界タイマー</h1>
-      </header>
-
-      <section class="panel" aria-live="polite">
-        <div class="status-header">
-          <span class="label">現在の残量</span>
-          <span id="batteryState" class="state-badge">取得中...</span>
-        </div>
-
-        <div class="meter" role="img" aria-label="バッテリー残量">
-          <div id="batteryFill" class="meter-fill"></div>
-        </div>
-
-        <div class="metrics">
-          <div class="metric-box">
-            <span class="small-label">充電率</span>
-            <strong id="batteryPercent">--%</strong>
-          </div>
-          <div class="metric-box">
-            <span class="small-label">残り時間</span>
-            <strong id="batteryTime">--:--</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel panel-subtle">
-        <p id="statusMessage">バッテリー状態を確認しています...</p>
-      </section>
-
-      <div class="actions">
-        <button id="refreshButton" type="button">再取得</button>
-      </div>
-
-      <div id="fallbackPanel" class="panel panel-fallback hidden" aria-live="polite">
-        <label class="fallback-label" for="manualBattery">手入力で残量を確認</label>
-        <input id="manualBattery" type="range" min="0" max="100" value="72" />
-        <div class="fallback-row">
-          <span>残量</span>
-          <strong id="manualValue">72%</strong>
-        </div>
-      </div>
-    </main>
-
-    <script src="./script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>バッテリー活動限界タイマー</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>活動限界タイマー</h1>
+    <div class="battery-info">
+      <p>バッテリー残量: <span id="battery-level">--%</span></p>
+      <p>充電状態: <span id="charging-status">--</span></p>
+    </div>
+    <button id="refresh-button">更新</button>
+  </div>
+  <script src="./script.js"></script>
+</body>
 </html>
